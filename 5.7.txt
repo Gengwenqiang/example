@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i,j=0;
+	float x[4],mean=0,flag;
+	cout<<"请依次输入分数:"<<endl;
+	for(i=0;i<4;i++)
+	{
+		cin>>x[i];
+		if(x[i]<0||x[i]>10)
+		{
+			cout<<"输入有误，请重新输入:"<<endl;
+		    cin>>x[i];
+		}
+	}
+    i=0;
+    flag=x[i];
+	for(;i<4;i++)
+	{
+		if((i+1)<4&&x[i+1]<=flag)
+			flag=x[i+1];
+	}
+    while(j<4)
+	{
+		if(x[j]!=flag)
+		{
+			mean=mean+x[j];
+		    j++;
+		}
+		else if(x[j]==flag)
+			j++;
+	}
+	mean=mean/3.0;
+	cout<<"这个舞蹈演员最终的得分是:"<<showpoint<<mean<<endl;
+	return 0;
+}
